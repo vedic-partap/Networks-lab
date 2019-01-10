@@ -1,0 +1,11 @@
+Compile :
+$ gcc -Wall wordserver.c -o server.o
+$ gcc -Wall wordclient.c -o client.o
+
+Run:
+$ ./server.o
+$ ./client.o
+
+How to Give input::
+1. Client will ask for the file name. Give `file.txt`. 
+2. The client will make a file name `client.txt`
