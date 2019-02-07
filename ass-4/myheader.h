@@ -410,17 +410,8 @@ void receivefile(char *name, int sock_fd)
         {
             recv(sock_fd, buf, 1, 0);
             buf[1] = '\0';
-            if(!strcmp(buf,"N"))
-            {
-                int num;
-                get_int(sock_fd,&num);
-                // printf("%d %s\n",num,buf);
-                char buffer[num];
-                total+=num;
-                recv(sock_fd,buffer,num,0);
-                write(fd,buffer,num-1);
-            }
-            else
+            
+            if(!strcmp(buf,"L"))
             {
                 int num;
                 get_int(sock_fd, &num);
@@ -431,7 +422,16 @@ void receivefile(char *name, int sock_fd)
                 write(fd, buffer, num-1);
                 break;
             }
-            
+            else
+            {
+                int num;
+                get_int(sock_fd, &num);
+                // printf("%d %s\n",num,buf);
+                char buffer[num];
+                total += num;
+                recv(sock_fd, buffer, num, 0);
+                write(fd, buffer, num - 1);
+            }
         }
         if(total==0)
         {
