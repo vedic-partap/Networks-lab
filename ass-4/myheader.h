@@ -257,7 +257,7 @@ void __sendfile(char *name,int sock_fd)
     int fd = open(name, O_RDONLY);
     if (fd == -1)
     {
-        perror("[ERROR] File can't be open\n");
+        // perror("[ERROR] File can't be open\n");
         close(sock_fd);
         exit(1);
         return;
@@ -301,7 +301,7 @@ void __receivefile(char* name,int sock_fd)
     int fd = open(name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd < 0)
     {
-        perror("[ERROR] Can't create a file\n");
+        // perror("[ERROR] Can't create a file\n");
         close(sock_fd);
         return;
     }
@@ -342,7 +342,7 @@ void sendfile(char *name, int sock_fd)
     int fd = open(name, O_RDONLY);
     if (fd == -1)
     {
-        perror("[ERROR] File can't be open\n");
+        // perror("[ERROR] File can't be open\n");
         close(sock_fd);
         exit(1);
         return;
@@ -397,7 +397,7 @@ void receivefile(char *name, int sock_fd)
     int fd = open(name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd < 0)
     {
-        perror("[ERROR] Can't create a file\n");
+        // perror("[ERROR] Can't create a file\n");
         close(sock_fd);
         exit(1);
         return;
@@ -408,7 +408,12 @@ void receivefile(char *name, int sock_fd)
         char buf[2];
         while(1)
         {
-            recv(sock_fd, buf, 1, 0);
+           int r =  recv(sock_fd, buf, 1, 0);
+           if(r==0)
+           {
+               remove(name);
+               break;
+           }
             buf[1] = '\0';
             
             if(!strcmp(buf,"L"))
