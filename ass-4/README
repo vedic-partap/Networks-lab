@@ -1,0 +1,31 @@
+File 
+    - ftpS.c - Server Code
+    - ftpC.c - Client Code 
+    -client.txt - File used to send from client to server using put command
+    -check/file.txt - File used to send server to client using get command
+    - myheader.h - Header file containing some useful functions
+
+Important Points 
+    - myheader.h conatins some functions that are not used in assignment but can be useful later
+    eg. __sendfile(), __getfile(), __send_int(), __get_int(). [NOT USED JUST FOR TESTING PURPOSE] has been mention in their command
+
+How to run :
+    - Server
+        $ gcc -Wall -std=c11 ftpS.c -o server
+        $ ./server
+
+    - Client
+        $ gcc -Wall -std=c11 ftpC.c -o client
+        $ ./client
+        > PORT 54673
+        200: Success
+        > cd check
+        200: Success
+        > get file.txt
+        250: Success
+        > put client.txt
+        250: Success
+    # Process used in client  PORT -> cd -> get -> put
+
+
+
