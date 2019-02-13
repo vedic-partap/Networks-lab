@@ -1,0 +1,22 @@
+Name : Vedic Partap
+Roll No: 16CS10053
+Assignment : 2
+
+
++++ How to use +++
+Server Side :
+    $ gcc -Wall file_server.c -o server
+    $./server
+Client Side :
+    $ gcc -Wall file_client.c -o client
+    $ ./client
+    SUCCESS] Connected to Server    
+    Enter the filename : file.txt
+
++++ File generated +++
+client.txt -- copy of file.txt
+
+Delimiter :
+' ' \t \n ; : , . 
+
+

@@ -1,0 +1,12 @@
++++ Compile +++
+    $ gcc -Wall selectserver.c -o server
+    $ gcc -Wall bowclient.c -o bow
+    $ gcc -Wall dnsclient.c -o dns
+
+
++++ Run +++
+    ./server
+
+    ./bow
+
+    ./dns
