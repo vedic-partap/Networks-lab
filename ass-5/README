@@ -1,0 +1,39 @@
+File Transfer in Blocks
+
+GCC Version used : gcc (Ubuntu 5.4.0-6ubuntu1~16.04.11) 5.4.0 20160609
+
+How to use
+
+    Client
+        $ gcc -Wall client.c -o client
+        Filename : file.txt
+        Size of file: 531
+
+        [SUCCESS] Received
+
+        Buffer Size: 20
+        Total Blocks: 27
+        Final BLock Size: 11
+        Total Bytes Received: 531
+
+        $ gcc -Wall server.c -o server
+
+    Server
+        >>> Ready to connect
+        > Connected
+        > File: file.txt
+        > Sent
+
+        >>> Ready to connect
+        > Connected
+        > File: file
+        [ERROR] File can't be found
+        : No such file or directory
+
+        >>> Ready to connect
+        > Connected
+        > File: file2.txt
+        > Sent
+
+        >>> Ready to connect
+
