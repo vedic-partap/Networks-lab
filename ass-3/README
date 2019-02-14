@@ -10,3 +10,6 @@
     ./bow
 
     ./dns
+
+Improvement : Sending complete Buffer evertime. Must be corrected by sending only the data as much required. The code require to have same buffer size in server and client to run.
+[Check out ass-6 code]
