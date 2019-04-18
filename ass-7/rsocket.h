@@ -1,29 +1,31 @@
 #ifndef RSOCKET_H
 #define RSOCKET_H
-
-#include <stdio.h>      // printf ....etc.
-#include <string.h>     // string functions
-#include <stdlib.h>     // exit(), free(), malloc ......etc.
-#include <time.h>       // time(NULL)
-#include <unistd.h>     // close
-#include <sys/socket.h> // socket
-#include <sys/select.h> // select 
-#include <pthread.h>    // threadX
-#include <signal.h>     // SIGKILL
+/*
++++++++++++++ Vedic Partap +++++++++++++
++++++++++++++ 16CS10053 +++++++++++++
+*/
+#include <stdio.h>
+#include <string.h> 
+#include <stdlib.h>
+#include <time.h>  
+#include <unistd.h>  
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <sys/select.h> 
+#include <pthread.h> 
+#include <signal.h>
 #include <assert.h>
 // To remove redundant headers
 
-
-#define BUF_SIZE 100
 #define MSG_SIZE 100
 #define TABLE_SIZE 100
 #define TIMEOUT 2
-#define DROP_PROBALITY 0.3
+#define DROP_PROBALITY 0.2
 #define SOCK_MRP 153
+#define BUFFER_SIZE 100
 
 int dropMessage(float p);
 
-void *threadX(void* param);
 
 int r_socket(int domain, int type, int protocol);
 
@@ -35,4 +37,5 @@ ssize_t r_recvfrom(int sockfd, char *buf, size_t len, int flags, struct sockaddr
 
 int r_close(int fd);
 
+void *runnerX(void* param);
 #endif
