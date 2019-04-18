@@ -1,0 +1,21 @@
++++++++++++++ Vedic Partap +++++++++++++
++++++++++++++ 16CS10053 +++++++++++++
+
+Assignment 8
+$ gcc -Wall mytraceroute_16CS10053.c -o tr
+
+$ sudo ./tr www.iitkgp.ac.in
+[sudo] password for vedic: 
+mytraceroute to www.iitkgp.ac.in (10.3.100.102), 64 hops max, 52 byte packets
+1	10.109.23.2	0.017 ms
+2	10.118.1.118	0.013 ms
+3	10.118.1.169	0.014 ms
+4	10.3.100.102	0.010 ms
+
+$ sudo ./tr google.com
+mytraceroute to google.com (172.217.163.206), 64 hops max, 52 byte packets
+1	10.109.23.2	0.023 ms
+2	10.118.1.118	0.021 ms
+3	*	*
+4	*	*
+

@@ -1,0 +1,20 @@
++++++++++++++ Vedic Partap +++++++++++++
++++++++++++++ 16CS10053 +++++++++++++
+
+Signal Based IO 
+
+$  gcc -Wall server.c -o server
+$ ./server
+Waiting ...
+[127.0.0.1]: vedic 
+Sending ...
+Send
+
+
+$ gcc -Wall client.c -o client
+$ ./client
+Enter the message: vedic
+Send
+Waiitng ...
+[127.0.0.1]: vedic 
+Received
